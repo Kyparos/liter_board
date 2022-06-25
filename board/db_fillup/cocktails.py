@@ -42,13 +42,13 @@ ingredients_amount = []
 ingredients_cocktail = []
 
 for i, cock in enumerate(cocktails):
-    cock_dict = {'model': 'board.Cocktails',
+    cock_dict = {'model': 'board.Cocktail',
                  'pk': int(cock['idDrink'])}
     cock_fields = {'name': cock['strDrink'],
                    'image': i,
                    'category': categories.index(cock['strCategory'])}
     ref = cock['strDrinkThumb']
-    img_data.append({'model': 'board.Images', 'pk': i, 'fields': {'ref': ref}})
+    img_data.append({'model': 'board.Image', 'pk': i, 'fields': {'ref': ref}})
     cock_dict['fields'] = cock_fields
     cocktails_to_json.append(cock_dict)
     j = 1
@@ -73,7 +73,7 @@ for ing in tqdm(ingredients_uni):
         continue
     ing_json = json.loads(req.content)['ingredients'][0]
     ing_dict = {'pk': int(ing_json['idIngredient']),
-                'model': 'board.Ingredients',
+                'model': 'board.Ingredient',
                 'fields': {'name': ing_json['strIngredient']}}
     ingredients_data.append(ing_dict)
 
