@@ -20,7 +20,7 @@ def post_user(request, user_id):
     user_posts = User.objects.get(id=user_id)
     posts = Post.objects.filter(user=user_id)
     posts_list = list(map(lambda x: (x, zip(x.cocktails.all(), x.cocktail_rating.all())), posts))
-    return render(request, 'posts.html', {'user': user_posts,
+    return render(request, 'board/posts.html', {'user': user_posts,
                                           'current_user': current_user,
                                           'posts': posts_list,
                                           'cocktail_rating': CocktailRating,
@@ -37,4 +37,4 @@ def register_request(request):
             return redirect("board:index")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
-    return render(request=request, template_name="register.html", context={"register_form": form})
+    return render(request=request, template_name="board/register.html", context={"register_form": form})
