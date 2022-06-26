@@ -48,7 +48,7 @@
     </header>
     <main class="main">
         <section class="post">
-                {% for post, cocktails in posts %}
+                {% for post, cock_rating in posts %}
                 <div class="post_content">
                     <div class="post_user_name">
                         <i class="material-symbols-outlined avatar">
@@ -60,12 +60,12 @@
                         {{ post.text }}
                     </div>
                     <div class="post_visual_content">
-                            {% for cocktail in cocktails %}
+                            {% for cocktail, rating in cock_rating %}
                             <div class="alco_photo_grade">
                                 <img src="{% static cocktail.image.ref %}" alt="" class="photo">
 
                                 <div class="cocktail_grade">
-                                    {{ cocktail.rating}}
+                                    {{ rating.get_rating_display}}
                                 </div>
                             </div>
                             {% endfor %}
