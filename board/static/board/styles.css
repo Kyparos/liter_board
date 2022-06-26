@@ -485,10 +485,6 @@ body{
     width: 100%;
 }
 
-.alco_photo_grade {
-
-}
-
 .post_likes{
     display: flex;
     align-items: center;
@@ -667,5 +663,44 @@ body{
 }
 
 .make_post_button:hover{
+    opacity: 1;
+}
+
+.user_alco_grade_wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 100%;
+    margin-top: 52px;
+}
+
+.grade{
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+.alco_photo_grade{
+    position: relative;
+}
+
+.alco_photo_grade .alco_close{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.alco_close{
+    background: #FFFFFF;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    color: red;
+    border: 0;
+    opacity: 0.7;
+}
+
+.alco_close:hover{
     opacity: 1;
 }

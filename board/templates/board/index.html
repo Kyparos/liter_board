@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Liter Board</title>
-    <link rel="stylesheet" href="../static/board/styles.css">
+    <link rel="stylesheet" href="../../static/board/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <style>
@@ -40,13 +40,34 @@
             </div>
         </div>
         <button class="make_post_button">
-
+            Post
         </button>
     </div>
     <div class="user_grade_wrapper">
         Drinks you have had
         <div class="alco_search_wrapper">
-        <input type="search" id="user_search" class="alco_search" placeholder="Search for cocktail...">
+<!--        <input type="search" id="user_search" class="alco_search" placeholder="Search for cocktail...">-->
+            <select name="" id="" class="alco_search">
+                <option value="">Choose your cocktail</option>
+                <option value="1">pivo</option>
+                <option value="2">vodka</option>
+                <option value="3">wine</option>
+            </select>
+        </div>
+        <div class="user_alco_grade_wrapper">
+            <div class="alco_photo_grade">
+                <img src="https://www.thecocktaildb.com/images/media/drink/tqyrpw1439905311.jpg" alt="hello" class="photo">
+                <button class="alco_close">
+                    X
+                </button>
+                <div class="alco_grade">
+                    <select name="user_grade" id="usergrade" class="grade">
+                        <option value="1">Worthless</option>
+                        <option value="2">Average</option>
+                        <option value="3">Great</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 
