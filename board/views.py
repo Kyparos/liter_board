@@ -7,9 +7,14 @@ from django.contrib.auth import login
 from django.contrib import messages
 
 
-def index(request):
-    return render(request, 'board/index.html')
 
+
+def index(request):
+    user = request.user
+    id = user.id
+    if not user.is_authenticated:
+        return redirect("login/")
+    return redirect( str(id) + '/', user_id=request.user.id)
 
 def posts(request, user_id):
     return render(request, 'board/posts.html', {'user': user_id})
