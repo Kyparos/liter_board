@@ -35,12 +35,14 @@
                 <div class="header_logo">
                     Liter Board
                 </div>
+                {% if current_user == user %}
                 <button class="post_button">
                     <i class="material-symbols-outlined plus">
                         add
                     </i>
                     Add new post
                 </button>
+                {% endif %}
             </div>
         </div>
     </header>

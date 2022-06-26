@@ -13,10 +13,12 @@ def posts(request, user_id):
 
 
 def post_user(request, user_id):
+    current_user = request.user
     user_posts = User.objects.get(id=user_id)
     posts = Post.objects.filter(user=user_id)
     posts_list = list(map(lambda x: ( x, x.cocktails.all()), posts))
     return render(request, 'posts.html', {'user': user_posts,
+                                          'current_user': current_user,
                                                 'posts': posts_list,
                                                 'cocktail_rating': CocktailRating,
                                                 'followings': UserFollowing.objects.filter(user_id=user_id)})
