@@ -380,6 +380,7 @@ body{
     font-weight: normal;
     color: #222222;
     background-color: #FAFAFA;
+    z-index: 1;
 }
 
 .wrapper{
@@ -475,19 +476,17 @@ body{
 }
 
 .post_visual_content{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
     margin-top: 8px;
     margin-left: 24px;
     margin-right: 24px;
     width: 100%;
 }
 
-.alco_photo_grade{
-    height: 148px;
-    width: 120px;
-    /*background: #;*/
-    border-radius: 24px;
+.alco_photo_grade {
+
 }
 
 .post_likes{
@@ -559,10 +558,12 @@ body{
     height: 100%;
     background-color: #000000;
     opacity: 0.7;
-    z-index: 0;
+    z-index: -2;
 }
 
 .modal_window{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     border: none;
     font-size: 28px;
     width: 1040px;
@@ -571,6 +572,7 @@ body{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     background-color: #FFFFFF;
     padding: 24px;
+    z-index: -10;
 }
 
 .button_close{
@@ -617,12 +619,38 @@ body{
     display: flex;
     justify-content: center;
     color: #FFBA00;
-    height: 20%;
 }
 
 .photo{
-    height: 80%;
+    width: 100%;
     border-radius: 24px;
     aspect-ratio: 1/1;
     object-fit: cover;
+}
+
+.user_input_wrapper{
+    z-index: -5;
+}
+
+.acc_ui{
+    background-color: #FAFAFA;
+    z-index: 0;
+}
+
+.user_grade_wrapper{
+    margin-top: 52px;
+    font-size: 20px;
+}
+
+.alco_search_wrapper{
+    padding-right: 32px;
+}
+
+.alco_search{
+    margin-top: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.16);
+    background: none;
+    margin-left: 5px;
+    border-radius: 16px;
+    width: 100%;
 }
