@@ -105,5 +105,5 @@ for ing, cock, amount in zip(ingredients_cocktail_ing_key, ingredients_cocktail,
 
 # %%
 to_json = img_data + ingredients_data + cocktails_to_json + ing_cock_data
-with open('data_to_dump.json', 'w') as f:
+with open('data_to_dump_1.json', 'w') as f:
     json.dump(to_json, f)
