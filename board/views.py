@@ -1,4 +1,3 @@
-
 from django.contrib.auth.models import User
 from .models import Post, CocktailRating, UserFollowing
 from django.shortcuts import render, redirect
@@ -8,7 +7,11 @@ from django.contrib import messages
 
 
 def index(request):
-    return render(request, 'board/index.html')
+    user = request.user
+    id = user.id
+    if not user.is_authenticated:
+        return redirect("login/")
+    return redirect(str(id) + '/', user_id=request.user.id)
 
 
 def posts(request, user_id):
@@ -21,10 +24,10 @@ def post_user(request, user_id):
     posts = Post.objects.filter(user=user_id)
     posts_list = list(map(lambda x: (x, zip(x.cocktails.all(), x.cocktail_rating.all())), posts))
     return render(request, 'board/posts.html', {'user': user_posts,
-                                          'current_user': current_user,
-                                          'posts': posts_list,
-                                          'cocktail_rating': CocktailRating,
-                                          'followings': UserFollowing.objects.filter(user_id=user_id)})
+                                                'current_user': current_user,
+                                                'posts': posts_list,
+                                                'cocktail_rating': CocktailRating,
+                                                'followings': UserFollowing.objects.filter(user_id=user_id)})
 
 
 def register_request(request):
@@ -38,3 +41,10 @@ def register_request(request):
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="board/register.html", context={"register_form": form})
+
+
+def set_clink(request, user_id, post_id):
+    post = Post.objects.get(id=post_id)
+    post.clink +=1
+    post.save()
+    return redirect('../../' + str(user_id) + '/')

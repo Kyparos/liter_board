@@ -70,8 +70,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'liter_board.wsgi.application'
-LOGOUT_REDIRECT_URL = "/"  # redirect to home page after logout
-LOGIN_REDIRECT_URL = "/"  # redirect to home page after login
+LOGOUT_REDIRECT_URL = "/board"  # redirect to home page after logout
+LOGIN_REDIRECT_URL = "/board"  # redirect to home page after login
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 

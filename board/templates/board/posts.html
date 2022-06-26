@@ -70,9 +70,11 @@
                             {% endfor %}
                     </div>
                     <div class="post_likes">
-                        <i class="material-symbols-outlined like">
-                            Wine_Bar
-                        </i>
+                        <a href="{{post.id}}/{{post_user.id}}">
+                            <i class="material-symbols-outlined like">
+                                Wine_Bar
+                            </i>
+                        </a>
                         {{ post.clink }}
                     </div>
                 </div>
@@ -82,7 +84,14 @@
     <div class="acc_ui">
         <div class="user_name">
             {{ user.username }}
+            {% if current_user.is_authenticated %}
+                <p><a href="{% url 'logout' %}">Log Out</a></p>
+            {% else %}
+                <p>You are not logged in</p>
+                <a href="{% url 'login' %}">Log In</a>
+            {% endif %}
         </div>
+
         <div class="user_followings_header">
             Following
         </div>
