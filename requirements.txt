@@ -1,2 +1,4 @@
 django
+django_registration
+django-crispy-forms
 tqdm
