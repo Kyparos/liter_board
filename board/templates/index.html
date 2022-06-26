@@ -27,6 +27,21 @@
     </style>
 </head>
 <body>
+
+<dialog id="add-post-dialog" class="modal_window">
+    <button class="button_close" onclick="closeDialog()">X</button>
+</dialog>
+
+<script>
+    const dialog = document.getElementById("add-post-dialog")
+    function showAddPostDialog() {
+        dialog.showModal()
+    }
+    function closeDialog() {
+        dialog.close()
+    }
+</script>
+
 <div class="site_wrapper">
     <header class="header">
         <div class="wrapper">
