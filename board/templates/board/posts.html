@@ -70,9 +70,11 @@
                             {% endfor %}
                     </div>
                     <div class="post_likes">
-                        <i class="material-symbols-outlined like">
-                            Wine_Bar
-                        </i>
+                        <a href="{{post.id}}/{{post_user.id}}">
+                            <i class="material-symbols-outlined like">
+                                Wine_Bar
+                            </i>
+                        </a>
                         {{ post.clink }}
                     </div>
                 </div>
