@@ -60,10 +60,8 @@
                     <div class="post_visual_content">
                             {% for cocktail in cocktails %}
                             <div class="alco_photo_grade">
+                                <img src="{% static cocktail.image.ref %}" alt="" class="photo">
 
-                                <div class="alco_photo">
-                                    <img src="{% static cocktail.image.ref %}" alt="">
-                                </div>
                                 <div class="cocktail_grade">
                                     {{ cocktail.rating}}
                                 </div>
