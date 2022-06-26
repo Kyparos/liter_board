@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Liter Board</title>
-    <link rel="stylesheet" href="../../liter_board/templates/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <style>
@@ -34,21 +34,27 @@
                 <div class="header_logo">
                     Liter Board
                 </div>
-                <button class="post_button">
+                <button class="post_button" onclick="showAddPostDialog()">
                     <i class="material-symbols-outlined plus">
                         add
                     </i>
                     Add new post
                 </button>
-                <div class="modal">
+                <div id="modalWin" class="modal">
                     <div class="modal_window">
-                        <button class="button_close">X</button>
+                        <button class="button_close" data-easy-toggle="#modalWin" data-easy-class="show">X</button>
                     </div>
-                    <div class="overlay">
+                    <div class="overlay" data-easy-toggle="#modalWin" data-easy-class="show">
 
                     </div>
                     <script>
+                        /*!
+ * EasyToggler v2.1.0 (https://github.com/rah-emil/easy-toggler#readme)
+ * Copyright 2022 Rah Emil <013131@mail.ru>
+ * Licensed under MIT (https://github.com/rah-emil/easy-toggler/blob/master/LICENSE)
+ */
                         !function(e){"function"==typeof define&&define.amd?define(e):e()}((function(){"use strict";function e(e,t){const s=e.target.closest(`[${t.toggle}]`),l=e.target.closest(`[${t.remove}]`),o=e.target.closest(`[${t.add}]`);if(s&&(e.preventDefault(),((e,t)=>{const s=e.getAttribute(t.toggle);document.querySelectorAll(`[${t.toggle}]`).forEach((s=>{if(!s.hasAttribute(t.parallel)&&s!==e){document.querySelector(s.getAttribute(t.toggle)).classList.remove(s.getAttribute(t.class));const l=e.getAttribute(t.self);l&&e.classList.remove(l)}})),document.querySelector(s)?.classList.toggle(e.getAttribute(t.class));const l=e.getAttribute(t.self);l&&e.classList.toggle(l)})(s,t)),l&&(e.preventDefault(),((e,t)=>{const s=e.getAttribute(t.remove),l=e.getAttribute(t.class);document.querySelectorAll(s).forEach((e=>{e.classList.remove(l)}));const o=e.getAttribute(t.self);o&&e.classList.remove(o)})(l,t)),o&&(e.preventDefault(),((e,t)=>{const s=e.getAttribute(t.add),l=e.getAttribute(t.class);document.querySelectorAll(s).forEach((e=>{e.classList.add(l)}));const o=e.getAttribute(t.self);o&&e.classList.add(o)})(o,t)),!s&&!l&&!o){const s=document.querySelectorAll(`[${t.rcoe}]`);Array.from(s).forEach((s=>{let l=s.getAttribute(t.toggle),o=s.getAttribute(t.class);if(!e.target.closest(l)){document.querySelector(l)?.classList.remove(o);const e=s.getAttribute(t.self);e&&s.classList.remove(e)}}))}}const t={toggle:"easy-toggle",add:"easy-add",remove:"easy-remove",class:"easy-class",rcoe:"easy-rcoe",parallel:"easy-parallel",self:"easy-self"};document.addEventListener("DOMContentLoaded",(()=>{document.addEventListener("click",(s=>e(s,t)))}))}));
+                        //# sourceMappingURL=easy-toggler.min.js.map
                     </script>
                 </div>
             </div>
