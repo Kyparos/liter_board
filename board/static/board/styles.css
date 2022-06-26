@@ -599,8 +599,10 @@ body{
     margin-top: 15px;
 }
 
-.user_text_input{
+#user_text_input{
     border: none;
+    width: 450px;
+    height: 280px;
     background: none;
     margin-left: 5px;
 }
