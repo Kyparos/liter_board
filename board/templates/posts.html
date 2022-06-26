@@ -52,7 +52,7 @@
                 <div class="post_content">
                     <div class="post_user_name">
                         <i class="material-symbols-outlined avatar">
-                            Account_Cir</i>
+                            Account_Circle</i>
                         {{ user.username }}
                     </div>
                     <div class="post_text_content">
@@ -89,7 +89,7 @@
         <div class="user_followings_list">
             {% for following in followings %}
                 <div class="followings_users">
-                {{ following.username }}
+                {{ following.following_user_id.username}}
             </div>
             {% endfor %}
             <a href="/" class="show_more">
