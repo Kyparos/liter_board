@@ -654,3 +654,18 @@ body{
     border-radius: 16px;
     width: 100%;
 }
+
+.make_post_button{
+    background-color: #10C200;
+    border-radius: 16px;
+    width: 185px;
+    height: 42px;
+    margin-top: 24px;
+    border: none;
+    color: #FAFAFA;
+    opacity: 0.7;
+}
+
+.make_post_button:hover{
+    opacity: 1;
+}
